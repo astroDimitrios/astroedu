@@ -1,0 +1,6 @@
+subprocess
+numpy
+matplotlib
+pandas
+jupyterlab
+ipywidgets

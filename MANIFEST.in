@@ -1,2 +1,2 @@
-include interactives/*
-include data/*
+include src/astroedu/interactives/*
+include src/astroedu/data/*

@@ -1,0 +1,1 @@
+Planetary data (including our Moon, the Galilean moons, and Pluto/Charon) taken from NASA Planetary factsheet (https://nssdc.gsfc.nasa.gov/planetary/factsheet/) and here - https://www.noao.edu/jagi/sepo/education/plansat/table.html.

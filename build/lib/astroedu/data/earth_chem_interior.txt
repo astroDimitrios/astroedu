@@ -1,0 +1,8 @@
+The chemical compostion of the Earth. Only some elements included. Some Oxygen data is missing. Values in %.
+
+Rows for: Bulk, Core, Lower Mantle, Upper Mantle, and the Crust.
+
+Data taken from:
+Don L. Anderson (1998) Theory of the Earth, Chapter 8, https://authors.library.caltech.edu/25018/9/TOE08.pdf
+Claude J. Allegre et al (1995) The chemical composition of the Earth, https://www.researchgate.net/publication/222035431_The_Chemical-Composition_of_the_Earth
+Frederick K. Lutgens and Edward J. Tarbuck (2000) Essentials of Geology 7th Edition

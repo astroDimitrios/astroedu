@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: astroedu
-Version: 0.0.2a1
+Version: 0.0.1a17
 Summary: A python package for astronomy educators
 Home-page: https://github.com/astroDimitrios/astroedu
 Author: Dimitrios Theodorakis
@@ -46,5 +46,5 @@ Classifier: Development Status :: 3 - Alpha
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
 Classifier: Operating System :: OS Independent
-Requires-Python: >=3.6
+Requires-Python: >=3.7
 Description-Content-Type: text/markdown

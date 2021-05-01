@@ -1,6 +1,7 @@
-subprocess
-numpy
-matplotlib
-pandas
-jupyterlab
-ipywidgets
+numpy>=1.10.0
+matplotlib>=3.4.0
+pandas>=1.2
+jupyterlab>=3.0.0
+ipywidgets>=7.6.0
+fire>=0.4.0
+importlib-resources>=5.1.2

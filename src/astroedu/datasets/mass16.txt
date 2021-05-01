@@ -1,0 +1,3 @@
+mass16.csv
+Atomic data (mass, binding energy etc of isotopes) from the Atomic Mass Data Center.
+http://amdc.impcas.ac.cn/filel.html

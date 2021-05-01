@@ -8,25 +8,18 @@ This package is in alpha.
 
 ## Installation
 
-**astroedu** requires:
-
-- Numpy
-- Matplotlib
-- Pandas
-- Jupyterlab
-- IPywidgets
-- Fire
-- importlib-resources
-
+To install **astroedu** run
 ```
 >>> pip install astroedu
 ```
-(build not implemented yet!)
 then run
 ```
 >>> astroedu build
 ```
 which creates the configuration file **config.ini**.
+
+**config.ini** stores the location of your documents folder.
+This is where an astroedu folder for interactive activites will me made. (not yet implemented)
 
 ## Current Functionality
 
@@ -42,3 +35,15 @@ Jupyter lab arguments can be passed after the interactive name for instance:
 ```
 >>> astroedu interactive wiens_law --port 9999
 ```
+
+### Datasets
+
+To use a data set import the utitlity function ```load_data``` from the datasets module:
+```
+from astroedu.datasets import load_data
+```
+Then you can load a data set by passing its name as a string to ```load_data```.
+```
+planets = load_data('planets')
+```
+The function returns a Pandas dataframe.

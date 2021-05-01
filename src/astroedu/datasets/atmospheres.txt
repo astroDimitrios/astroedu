@@ -1,0 +1,5 @@
+atmospheres.csv
+Data from Rauf KM et al. (2015)
+Atmospheric compositions of all Planets and Giant Moons in the Solar System
+Percentage compositions for the different gases and Pluto is included
+https://www.longdom.org/open-access/comparing-the-atmospheric-compositions-of-all-planets-and-giant-moons-in-solar-system-2332-2519-1000136.pdf

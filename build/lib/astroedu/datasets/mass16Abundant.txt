@@ -1,0 +1,5 @@
+mass16Abundant.csv
+Atomic data (mass, binding energy etc of isotopes) from the Atomic Mass Data Center.
+http://amdc.impcas.ac.cn/filel.html
+This file only contains the most abundant isotope of each element.
+It is a processed version of mass16.csv

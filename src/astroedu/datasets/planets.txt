@@ -1,0 +1,5 @@
+planets.csv
+Planetary data (including our Moon, the Galilean moons, and Pluto/Charon.
+Taken from NASA Planetary factsheet here
+https://nssdc.gsfc.nasa.gov/planetary/factsheet/) 
+and from here - https://www.noao.edu/jagi/sepo/education/plansat/table.html.

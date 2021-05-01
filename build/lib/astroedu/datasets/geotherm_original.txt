@@ -1,0 +1,11 @@
+geotherm_original.csv
+Data taken from - Professor Bob Downs, University of Arizona
+https://www.geo.arizona.edu/xtal/geos306/fall06-10.htm
+
+Used to construct/plot the Earth's geothermal gradient.  
+r - depth (km)  
+r*- distance from the center of the Earth (km)  
+T - temperature at r (K)  
+
+This original data also has pressure vs depth data.
+I have adapted the data in geotherm.csv.

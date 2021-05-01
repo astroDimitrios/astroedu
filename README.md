@@ -8,9 +8,20 @@ This package is in alpha.
 
 ## Installation
 
+**astroedu** requires:
+
+- Numpy
+- Matplotlib
+- Pandas
+- Jupyterlab
+- IPywidgets
+- Fire
+- importlib-resources
+
 ```
 >>> pip install astroedu
 ```
+(build not implemented yet!)
 then run
 ```
 >>> astroedu build

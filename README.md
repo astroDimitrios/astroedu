@@ -48,6 +48,7 @@ Then you can load a data set by passing its name as a string to ```load_data```.
 planets = load_data('planets')
 ```
 The function returns a Pandas dataframe.
+If the optional keyword argument ```info``` is ```True``` then a brief explanation of the data is printed before the dataframe is loaded.
 
 ### Constants
 

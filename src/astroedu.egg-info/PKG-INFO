@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: astroedu
-Version: 0.1.1a1
+Version: 0.2.0a1
 Summary: A python package for astronomy educators
 Home-page: https://github.com/astroDimitrios/astroedu
 Author: Dimitrios Theodorakis
@@ -56,6 +56,43 @@ Description: <center>
         planets = load_data('planets')
         ```
         The function returns a Pandas dataframe.
+        
+        ### Constants
+        
+        Astropy like constants for ease of access.
+        For full functionality use the astropy [constants](https://docs.astropy.org/en/stable/constants/) submodule.
+        
+        ```
+        >>> from astroedu.constants import c
+        >>> c
+        Constant(c, 299792458, m/s, Speed of light)
+        ```
+        or
+        ```
+        >>> import astroedu.constants as const
+        >>> print(const.c)
+        Name = Speed of light
+        Value = 299792458
+        Unit = m/s
+        ```
+        
+        Constants can perform simple maths with other constants or int/float/np.array.
+        The returned value is an int/float/np.array not a Constant class instance:
+        ```
+        >>> from astroedu.constants import c, m_e
+        >>> c*m_e
+        2.7309245302881346e-22
+        ```
+        Caveat: Constant must be in front of the array.
+        ```
+        >>> import numpy as np
+        >>> from astroedu.constants import c
+        >>> a = np.arange(4)
+        >>> c*a
+        array([        0, 299792458, 599584916, 899377374])
+        >>> a*c
+        TypeError: unsupported operand type(s) for *: 'int' and 'Constant'
+        ```
 Keywords: astronomy education astrophysics
 Platform: UNKNOWN
 Classifier: Development Status :: 3 - Alpha

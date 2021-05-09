@@ -1,7 +1,0 @@
-numpy>=1.10.0
-matplotlib>=3.3.0
-pandas>=1.1
-jupyterlab>=3.0.0
-ipywidgets>=7.6.0
-fire>=0.4.0
-importlib-resources>=5.1.2

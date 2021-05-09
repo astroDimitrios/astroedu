@@ -1,3 +1,0 @@
-[console_scripts]
-astroedu = astroedu.__main__:main
-

@@ -76,13 +76,48 @@ The returned value is an int/float/np.array not a Constant class instance:
 >>> c*m_e
 2.7309245302881346e-22
 ```
-Caveat: Constant must be in front of the array.
+
+### Functions
+
+Some basic functions have been implemented:
 ```
->>> import numpy as np
->>> from astroedu.constants import c
->>> a = np.arange(4)
->>> c*a
-array([        0, 299792458, 599584916, 899377374])
->>> a*c
-TypeError: unsupported operand type(s) for *: 'int' and 'Constant'
+>>> from astroedu.functions import wiens_law
+>>> wiens_law(1000)
+2.897771955e-06
 ```
+
+### Classes
+
+Some classes which are hopefully useful!
+
+##### Body2D
+
+The Body2D class is the main body class for planets and other objects.
+Usage - ```Body2D(str-name, float-x pos in AU, float-y pos in AU, float-radius in km, float-mass in kg)``` for instance:
+
+```
+>>> from astroedu.classes import Body2D
+>>> moon = Body2D('Moon', 0, 0, 1737.4, 0.07346*10**24)
+>>> print(moon)
+Moon at (0.00, 0.00) AU with r = 1.74E+03 km and m = 7.35E+22 kg
+```
+
+There are pre-defined class methods for the Earth, Sun, and Moon:
+
+```
+>>> from astroedu.classes import Body2D
+>>> moon = Body2D.Moon(0, 0)
+>>> print(moon)
+Moon at (0.00, 0.00) AU with r = 1.74E+03 km and m = 7.35E+22 kg
+```
+
+The class has built in methods. For instance to calculate the tides on the Earth due to the Moon:
+
+```
+>>> from astroedu.classes import Body2D
+>>> earth = Body2D.Earth(0, 0)
+>>> moon = Body2D.Moon(384400000/au, 0)
+>>> forces = earth.tides(moon, step=0.25, scale=5.972*10**24)
+```
+Documentation coming soon.
+More methods will be added at a later date including calculating gravitational potentials and plotting tides & potentials.

@@ -3,9 +3,14 @@
 </center>
 
 [![PyPI version](https://badge.fury.io/py/astroedu.svg)](https://badge.fury.io/py/astroedu)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md) 
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md) **Alpha**
 
-This package is in alpha.
+A package containing small interactives, datasets, functions etc for teaching astronomy.
+
+Contributors:
+
+- Dimitrios Theodorakis
+- Ankit Barik, planetMagFields module, [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4706157.svg)](https://doi.org/10.5281/zenodo.4706157), [github.com/AnkitBarik/planetMagFields](github.com/AnkitBarik/planetMagFields)
 
 ## Installation
 
@@ -13,14 +18,6 @@ To install **astroedu** run
 ```
 >>> pip install astroedu
 ```
-then run
-```
->>> astroedu build
-```
-which creates the configuration file **config.ini**.
-
-**config.ini** stores the location of your documents folder.
-This is where an astroedu folder for interactive activites will me made. (not yet implemented)
 
 ## Current Functionality
 
@@ -121,3 +118,21 @@ The class has built in methods. For instance to calculate the tides on the Earth
 ```
 Documentation coming soon.
 More methods will be added at a later date including calculating gravitational potentials and plotting tides & potentials.
+
+## Submodules
+
+### planetMagFields
+
+planetMagFields by Ankit Barik.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4706157.svg)](https://doi.org/10.5281/zenodo.4706157), [github.com/AnkitBarik/planetMagFields](github.com/AnkitBarik/planetMagFields)
+
+See Ankit's GitHub for usage. Note: cartopy is required for some plots which requires these non-python packages to be installed, [GEOS](https://trac.osgeo.org/geos/) and [PROJ](https://proj.org/). Some functions also require other libraries, see Ankit's GitHub for more info.
+
+Since the dataset location is defined relative to the astroedu install there is no need to specify a datDir for instance:
+
+```
+>>> from astroedu.planetmagfields import *
+>>> p = planet(name='jupiter')
+>>> # not p = planet(name='jupiter',datDir='planetmagfields/data/')
+>>> p.plot(r=0.85,proj='Mollweide')
+```

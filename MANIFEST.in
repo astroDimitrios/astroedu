@@ -1,2 +1,5 @@
 include src/astroedu/interactives/*
 include src/astroedu/datasets/*
+
+include src/astroedu/planetmagfields/*
+include src/astroedu/planetmagfields/data/*

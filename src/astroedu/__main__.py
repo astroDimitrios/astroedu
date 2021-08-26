@@ -7,7 +7,7 @@ import fire
 from astroedu.__build__ import get_astroedu_path
 from astroedu.__build__ import build_path_config
 
-commands = ['build', 'interactive']
+commands = ['build', 'interactive', 'magfield']
 astroedu_path = get_astroedu_path()
 config_file_name = '/config.ini'
 config_file_path = astroedu_path + config_file_name
@@ -46,6 +46,60 @@ def _load_interactive(*args):
         print(f'Loading interactive {interactive_name}!')
         subprocess.run(run_interactive)
 
+def _planetmagfield_quick(*args):
+    ''' Utility function to make wuick plots using planetMagFields
+    See https://zenodo.org/record/5140421#.YSdp7t_TUuU
+    '''
+    levels=20
+    cmap='RdBu_r'
+    proj = 'Mollweide'
+    r = 1
+
+    import numpy as np
+    
+    if len(args) > 4:
+        raise ValueError("Too many arguments, exiting ...\n")
+    elif len(args) == 4:
+        planet = str(args[1]).lower()
+        r      = np.float32(args[2])
+        proj   = str(args[3])
+    elif len(args) == 3:
+        planet = str(args[1]).lower()
+        try:
+            r      = np.float32(args[2])
+        except:
+            proj   = str(args[2])
+    elif len(args) == 2:
+        if args[2] == '--help':
+            print('planetMagFields\nSubmodule by Ankit Barik - 10.5281/zenodo.5140421\nUsage see - github.com/AnkitBarik/planetMagFields')
+        else:
+            print("Radius not specified, using surface\n")
+            planet = str(args[1]).lower()
+    else:
+        print("Planet or radius not specified, plotting for Earth's surface\n")
+        planet="earth"
+        r=1.
+
+    import matplotlib.pyplot as plt
+    from astroedu.planetmagfields.libbfield import getBr, plotAllFields, plotMagField
+
+    if planet == 'all':
+        with files('astroedu.planetmagfields').joinpath('data/') as p:
+            plotAllFields(datDir=p,r=r,levels=levels,cmap=cmap,proj=proj)
+            plt.tight_layout()
+            plt.subplots_adjust(top=0.895,
+                                bottom=0.035,
+                                left=0.023,
+                                right=0.976,
+                                hspace=0.38,
+                                wspace=0.109)
+    else:
+        with files('astroedu.planetmagfields').joinpath('data/') as p:
+            plotMagField(planet=planet,r=r,datDir=p,levels=levels,cmap=cmap,proj=proj)
+            plt.tight_layout()
+
+    plt.show()
+
 def startup(*args):
     ''' Startup function called by Fire cli function main()
 
@@ -67,7 +121,7 @@ def startup(*args):
     '''
     if not args:
         raise ValueError('No arguments passed to astroedu call.')
-    command = args[0]
+    command = args[0].lower()
     if command not in commands:
         raise ValueError('Command not recognised.')
     elif command == 'build': 
@@ -76,6 +130,8 @@ def startup(*args):
         raise ValueError(f'No arguments passed to {command}')
     elif command == 'interactive':
         _load_interactive(*args)
+    elif command == 'magfield':
+        _planetmagfield_quick(*args)
 
 if __name__ == '__main__':
     fire.Fire(startup)

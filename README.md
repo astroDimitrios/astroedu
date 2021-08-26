@@ -3,7 +3,8 @@
 </center>
 
 [![PyPI version](https://badge.fury.io/py/astroedu.svg)](https://badge.fury.io/py/astroedu)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md) **Alpha**
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)](code_of_conduct.md)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5270399.svg)](https://doi.org/10.5281/zenodo.5270399) **Alpha**
 
 A package containing small interactives, datasets, functions etc for teaching astronomy.
 

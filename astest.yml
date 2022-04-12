@@ -1,0 +1,15 @@
+name: astest
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - importlib_resources
+  - numpy
+  - ipython
+  - matplotlib
+  - jupyterlab
+  - ipywidgets
+  - build
+  - twine
+prefix: C:\Users\polyq\Anaconda3\envs\astest

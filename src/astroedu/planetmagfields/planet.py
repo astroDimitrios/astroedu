@@ -1,23 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from .libgauss import get_data, filt_Gauss, filt_Gaussm0,getB, getBm0, get_spec
 from .libbfield import getBr
-from .plotlib import plotB, plotSurf, plot_spec
-from importlib_resources import files
-import sys
+from .plotlib import plotSurf, plot_spec
+from .utils import stdDatDir, planetlist
 
-planetlist = ["mercury","earth","jupiter","saturn","uranus","neptune","ganymede"]
-
-datDir = files('astroedu.planetmagfields').joinpath('data/')
 
 class planet:
 
-    def __init__(self,name='earth',datDir=datDir):
+    def __init__(self,name='earth',r=1,nphi=256,datDir=stdDatDir,info=True):
 
         self.name   = name.lower()
+        self.nphi   = nphi
+        self.ntheta = nphi//2
+
         if self.name not in planetlist:
             print("Planet must be one of the following!")
             print(planetlist)
@@ -27,11 +26,14 @@ class planet:
                 get_data(self.datDir,planet=self.name)
 
         self.p2D, self.th2D, self.Br, self.dipTheta, self.dipPhi = \
-                getBr(datDir=self.datDir,planet=self.name,r=1,info=True)
+                getBr(self,r=r,
+                    nphi=self.nphi,
+                    ntheta=self.ntheta,
+                    info=info)
 
         self.phi = self.p2D[:,0]
         self.theta = self.th2D[0,:]
-        self.r = 1
+        self.r = r
 
     def plot(self,r=1,levels=30,cmap='RdBu_r',proj='Mollweide'):
         plt.figure(figsize=(12,6.75))
@@ -40,7 +42,7 @@ class planet:
             ax,cbar = plotSurf(self.p2D,self.th2D,self.Br,levels=levels,cmap=cmap,proj=proj)
         else:
             self.p2D, self.th2D, self.Br, self.dipTheta, self.dipPhi = \
-                    getBr(datDir=self.datDir,planet=self.name,r=r,info=False)
+                    getBr(planet=self,r=r,info=False)
             self.r = r
             ax,cbar = plotSurf(self.p2D,self.th2D,self.Br,levels=levels,cmap=cmap,proj=proj)
 

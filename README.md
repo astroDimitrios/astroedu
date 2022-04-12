@@ -127,13 +127,15 @@ More methods will be added at a later date including calculating gravitational p
 planetMagFields by Ankit Barik.
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4706157.svg)](https://doi.org/10.5281/zenodo.4706157), [github.com/AnkitBarik/planetMagFields](github.com/AnkitBarik/planetMagFields)
 
-See Ankit's GitHub for usage. Note: cartopy is required for some plots which requires these non-python packages to be installed, [GEOS](https://trac.osgeo.org/geos/) and [PROJ](https://proj.org/). Some functions also require other libraries, see Ankit's GitHub for more info.
+See Ankit's GitHub for usage. Note: cartopy is required for some plots which requires these packages to be installed, [GEOS](https://trac.osgeo.org/geos/) and [PROJ](https://proj.org/). Some functions also require other libraries such as SHTns (no Windows version) and PyEVTK, see Ankit's GitHub for more info.
 
 Since the dataset location is defined relative to the astroedu install there is no need to specify a datDir for instance:
 
 ```
+>>> import matplotlib.pyplot as plt
 >>> from astroedu.planetmagfields import *
 >>> p = planet(name='jupiter')
 >>> # not p = planet(name='jupiter',datDir='planetmagfields/data/')
 >>> p.plot(r=0.85,proj='Mollweide')
+>>> plt.show()
 ```

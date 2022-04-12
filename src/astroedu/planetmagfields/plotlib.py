@@ -9,7 +9,6 @@ def hammer2cart(ttheta, pphi, colat=False):
     """
     This function is used to define the Hammer projection for
     default plotting. Copied from MagIC python plotting script:
-
     https://github.com/magic-sph/magic/blob/master/python/magic/plotlib.py
     """
 

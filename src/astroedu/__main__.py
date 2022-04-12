@@ -81,9 +81,11 @@ def _planetmagfield_quick(*args):
         r=1.
 
     import matplotlib.pyplot as plt
-    from astroedu.planetmagfields.libbfield import getBr, plotAllFields, plotMagField
+    # from astroedu.planetmagfields.libbfield import getBr, plotAllFields, plotMagField
 
     if planet == 'all':
+        from astroedu.planetmagfields.libbfield import plotAllFields
+
         with files('astroedu.planetmagfields').joinpath('data/') as p:
             plotAllFields(datDir=p,r=r,levels=levels,cmap=cmap,proj=proj)
             plt.tight_layout()
@@ -94,8 +96,11 @@ def _planetmagfield_quick(*args):
                                 hspace=0.38,
                                 wspace=0.109)
     else:
+        from astroedu.planetmagfields.libbfield import plotMagField
+
         with files('astroedu.planetmagfields').joinpath('data/') as p:
-            plotMagField(planet=planet,r=r,datDir=p,levels=levels,cmap=cmap,proj=proj)
+            # plotMagField(planet=planet,r=r,datDir=p,levels=levels,cmap=cmap,proj=proj)
+            plotMagField(name=planet,r=r,levels=levels,cmap=cmap,proj=proj)
             plt.tight_layout()
 
     plt.show()

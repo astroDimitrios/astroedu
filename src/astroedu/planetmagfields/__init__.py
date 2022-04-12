@@ -3,3 +3,5 @@
 
 from .planet import planet
 from .potextra import extrapot
+
+__version__ = '1.0.2'

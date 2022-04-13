@@ -17,7 +17,13 @@ Contributors:
 
 To install **astroedu** run
 ```
->>> pip install astroedu
+pip install astroedu
+```
+
+or with [conda](https://anaconda.org/conda-forge/astroedu)
+
+```
+conda install -c conda-forge astroedu
 ```
 
 ## Current Functionality
@@ -25,14 +31,14 @@ To install **astroedu** run
 ### Interactives
 
 ```
->>> astroedu interactive wiens_law
+astroedu interactive wiens_law
 ```
 
 Loads the interactive notebook file exploring Wien's Law. 
 Jupyter lab arguments can be passed after the interactive name for instance:
 
 ```
->>> astroedu interactive wiens_law --port 9999
+astroedu interactive wiens_law --port 9999
 ```
 
 ### Datasets

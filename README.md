@@ -90,6 +90,29 @@ Some basic functions have been implemented:
 2.897771955e-06
 ```
 
+You can use the **get_sun()** function to quickly display images of the Sun if you have [SunPy](https://sunpy.org/) installed.
+```
+# From the command line:
+astroedu get_sun                          # plots today's Sun
+astroedu get_sun 2022/02/02               # plots Sun on diff date than today
+astroedu get_sun save                     # plots then saves image
+astroedu get_sun 2022/02/02 save
+```
+```
+# In .py or IPython
+>>> from astroedu.functions import get_sun
+>>> get_sun()                                 # plots today's Sun
+>>> get_sun('2022/02/02')                     # plots Sun on diff date than today
+>>> get_sun('2022/02/02', save=True)          # plots then saves image
+```
+
+Before you can save anything run:
+```
+astroedu build
+```
+in the terminal. This creates a **config.ini** file which contains paths to your astroedu install and Documents directory.
+The **get_sun()** function will create the directory ***astroedu*** in your Documents directory if it doesn't exist and save files there.
+
 ### Classes
 
 Some classes which are hopefully useful!

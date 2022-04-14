@@ -7,7 +7,7 @@ import fire
 from astroedu.__build__ import get_astroedu_path
 from astroedu.__build__ import build_path_config
 
-commands = ['build', 'interactive', 'magfield']
+commands = ['build', 'interactive', 'magfield', 'get_sun']
 astroedu_path = get_astroedu_path()
 config_file_name = '/config.ini'
 config_file_path = astroedu_path + config_file_name
@@ -105,6 +105,17 @@ def _planetmagfield_quick(*args):
 
     plt.show()
 
+def _get_sun_shortcut(*args):
+    ''' Shortcut function to call get_sun
+        with any args passed to the Fire CLI
+    '''
+    from astroedu.functions import get_sun
+
+    if len(args) == 1:
+        return get_sun()
+    else:
+        return get_sun(args[1:])
+
 def startup(*args):
     ''' Startup function called by Fire cli function main()
 
@@ -131,7 +142,9 @@ def startup(*args):
         raise ValueError('Command not recognised.')
     elif command == 'build': 
         build_path_config()
-    elif len(args) == 1: # build doesn't need extras
+    elif command == 'get_sun':
+        _get_sun_shortcut(*args)
+    elif len(args) == 1: # build and get_sun don't need extras
         raise ValueError(f'No arguments passed to {command}')
     elif command == 'interactive':
         _load_interactive(*args)

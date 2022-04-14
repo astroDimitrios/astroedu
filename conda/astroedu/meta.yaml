@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/astroedu-{{ version }}.tar.gz
-  sha256: 60b593eaa333350275f391a340f45cb0f52df4e67ef20b727adb43fc00bcb32e
+  sha256: fe28c9675afe6aab21be8023507b649af0c0ce753d7fca865faed6089a4e6a74
 
 build:
   number: 0

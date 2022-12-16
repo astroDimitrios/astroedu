@@ -12,7 +12,7 @@ Contributors:
 
 - Dimitrios Theodorakis
 - Ankit Barik, planetMagFields module, [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4706157.svg)](https://doi.org/10.5281/zenodo.4706157), [github.com/AnkitBarik/planetMagFields](github.com/AnkitBarik/planetMagFields)
-
+- Muhammad Masoom / planets.py
 ## Installation
 
 To install **astroedu** run
